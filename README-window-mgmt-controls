@@ -1,0 +1,43 @@
+Using NAppChannel to control applications via NWM
+
+These are static functions that communicate with WM features:
+
+include "nappchannel.h"
+
+---------
+NAppChannel::sendRunApp(const QString &appname,const QStringList &arguments); 
+NAppChannel::sendRunApp(const QString &appname);
+
+appname = Full Path of application
+
+Send command to start and application. If application is already running it will be shown/unhidden
+
+--------- 
+NAppChannel::sendCloseOtherApps(const QStringList &except);
+
+Closes other applications.  Can be used to recorder to shutdown all applications but itself. except = full path to exec
+
+---------
+NAppChannel::sendCloseAll(); 
+
+Closes all applications.  Can be used to close all NWM managed applications
+
+---------
+NAppChannel::sendHideApp(const QString& name);
+
+Hides an app based on its name.  name = argv[0]
+
+--------- 
+NAppChannel::sendShowApp(const QString& name);
+
+Shows an app based on its name. If not found do nothing.   name = argv[0]
+
+---------
+NAppChannel::sendHideApp(const int winId);
+
+Hide application based on window id.  Can be used by a window to hide itself.  winId = this->winId(); 
+
+---------
+NAppChannel::sendShowApp(const int winId);
+
+Show application based on window id.  Can be used by a window to hide itself.  winId = this->winId();
