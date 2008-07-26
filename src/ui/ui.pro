@@ -6,9 +6,6 @@ TEMPLATE = app
 TARGET = nwm
 DESTDIR = ../../build
 DEPENDPATH += .
-INCLUDEPATH += ${TOOLCHAIN_USR_INSTALL}/include/Neuros-Cooler/core 
-
-include (../../config.pri)
 
 # Input
 SOURCES += main.cpp nwmserver.cpp processhandler.cpp busywidget.cpp
@@ -27,8 +24,8 @@ TRANSLATIONS+=../../translations/nwm_zh.ts \
                   ../../translations/nwm_ru.ts \
                   ../../translations/nwm_sv.ts
 
-rootfs.files = ../../build/nwm
+target.path = $$(INSTALL_MOD_PATH)/usr/bin
 
-INSTALLS += rootfs
+INSTALLS += target
 
 QMAKE_CLEAN = ./build/* ./Makefile ./tmp/* ./*~
