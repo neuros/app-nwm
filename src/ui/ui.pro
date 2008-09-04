@@ -24,7 +24,7 @@ TRANSLATIONS+=../../translations/nwm_zh.ts \
                   ../../translations/nwm_ru.ts \
                   ../../translations/nwm_sv.ts
 
-target.path = $$(INSTALL_MOD_PATH)/usr/bin
+target.path = $$(INSTALL_MOD_PATH)/usr/local/bin
 
 INSTALLS += target
 
